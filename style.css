@@ -54,11 +54,15 @@ p {
 }
 
 /* VALOR */
-.valor {
-  font-size: 32px;
-  margin: 20px 0;
+.valor {.valor {
+  font-size: 46px;
+  margin: 25px 0;
   color: #00ff9d;
-  text-shadow: 0 0 10px #00ff9d;
+  text-shadow: 
+    0 0 10px #00ff9d,
+    0 0 25px #00ff9d,
+    0 0 50px #00ff9d;
+}
 }
 
 /* BARRA */
