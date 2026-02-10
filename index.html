@@ -1,1 +1,44 @@
-<h1 style="font-size:80px;color:red;">FUNCIONOU</h1>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>Porco da Fortuna</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>PORCO DA FORTUNA 🍀🤑</h1>
+<p class="sub">Transforme R$1,00 em uma chance real de ganhar dinheiro.</p>
+
+<div class="porco">🐷</div>
+
+<h2>VALOR ATUAL DO PORQUINHO</h2>
+<div id="valor">R$ 0,00</div>
+<p>Meta: R$ 100,00</p>
+
+<div class="barra">
+  <div id="progresso"></div>
+</div>
+
+<button onclick="participar()">COMO PARTICIPAR</button>
+
+<hr>
+
+<h3>Como Funciona</h3>
+<p>Cada R$1,00 = 1 número</p>
+
+<h3>Premiação</h3>
+<p>50% do valor será sorteado</p>
+
+<h3>Transparência</h3>
+<p>Sorteio ao vivo em site gerador de números</p>
+
+<!-- Painel escondido -->
+<div class="painel">
+<input type="number" id="novoValor" placeholder="Novo valor">
+<button onclick="atualizar()">Atualizar Valor</button>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
