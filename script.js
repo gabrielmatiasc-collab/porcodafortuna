@@ -1,26 +1,31 @@
-let meta = 100;
+let total = 0;
+const meta = 100;
 
-let valor = localStorage.getItem("valor") || 0;
+// Atualiza barra e valor
+function atualizarTela() {
+  document.getElementById("valor").innerText = `R$ ${total.toFixed(2)}`;
+  let porcentagem = (total / meta) * 100;
+  if (porcentagem > 100) porcentagem = 100;
+  document.getElementById("barra").style.width = porcentagem + "%";
+}
+
+// Área secreta
+function abrirAdmin() {
+  const senha = prompt("Digite a senha do administrador:");
+
+  if (senha === "admin2254495") {
+    const novoValor = prompt("Digite o valor TOTAL arrecadado:");
+
+    if (!isNaN(novoValor) && novoValor !== "") {
+      total = parseFloat(novoValor);
+      atualizarTela();
+      alert("Valor atualizado com sucesso!");
+    } else {
+      alert("Valor inválido.");
+    }
+  } else {
+    alert("Senha incorreta!");
+  }
+}
+
 atualizarTela();
-
-function atualizarTela(){
-document.getElementById("valor").innerText =
-"R$ " + Number(valor).toFixed(2).replace(".",",");
-
-let porcentagem = (valor/meta)*100;
-document.getElementById("progresso").style.width =
-porcentagem + "%";
-}
-
-function atualizar(){
-let novo = document.getElementById("novoValor").value;
-if(novo >= 0){
-valor = novo;
-localStorage.setItem("valor", valor);
-atualizarTela();
-}
-}
-
-function participar(){
-window.open("https://wa.me/5514997410508");
-}
