@@ -32,7 +32,12 @@ function atualizarTela(){
  salvar();
 
  if(total >= meta){
-   confete();
+   confete(function confete(){
+ confetti({
+  particleCount:200,
+  spread:100
+ });
+});
  }
 }
 
