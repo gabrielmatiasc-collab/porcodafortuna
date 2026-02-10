@@ -1,99 +1,94 @@
-let total = 0;
-let participantes = 0;
+const senhaAdmin = "admin2254495";
 const meta = 100;
 
-const senhaAdmin = "admin2254495";
+let total = Number(localStorage.getItem("total")) || 0;
+let participantes = Number(localStorage.getItem("participantes")) || 0;
+let ranking = JSON.parse(localStorage.getItem("ranking")) || [];
 
-// =========================
-// ATUALIZA TELA
-// =========================
-function atualizarTela() {
-  document.getElementById("valor").innerText =
-    `R$ ${total.toFixed(2)}`;
-
-  let porcentagem = (total / meta) * 100;
-  if (porcentagem > 100) porcentagem = 100;
-
-  document.getElementById("barra").style.width = porcentagem + "%";
-
-  document.getElementById("participantes").innerText = participantes;
-
-  document.getElementById("ultimaAtualizacao").innerText =
-    new Date().toLocaleString("pt-BR");
+// =====================
+function salvar(){
+ localStorage.setItem("total", total);
+ localStorage.setItem("participantes", participantes);
+ localStorage.setItem("ranking", JSON.stringify(ranking));
 }
 
-// =========================
-// ÁREA ADMIN
-// =========================
-function abrirAdmin(alert("Funções: Atualizar valor, participantes e ranking");) {
-  const senha = prompt("Senha do administrador:");
+// =====================
+function atualizarTela(){
 
-  if (senha === senhaAdmin) {
+ document.getElementById("valor").innerText =
+  `R$ ${total.toFixed(2)}`;
 
-    let novoValor = prompt("Valor TOTAL arrecadado:");
-    let novosParticipantes = prompt("Total de participantes:");
+ let porcentagem = (total/meta)*100;
+ if(porcentagem>100) porcentagem=100;
 
-    if (!isNaN(novoValor) && !isNaN(novosParticipantes)) {
-      total = parseFloat(novoValor);
-      participantes = parseInt(novosParticipantes);
+ document.getElementById("barra").style.width = porcentagem+"%";
 
-      atualizarTela();
-      tocarSom();
-    } else {
-      alert("Valores inválidos");
-    }
+ document.getElementById("participantes").innerText = participantes;
 
-  } else {
-    alert("Senha incorreta");
-  }
+ document.getElementById("ultimaAtualizacao").innerText =
+  new Date().toLocaleString("pt-BR");
+
+ atualizarRanking();
+ salvar();
+
+ if(total >= meta){
+   confete();
+ }
 }
 
-// =========================
-// SOM
-// =========================
+// =====================
+function atualizarRanking(){
+
+ const ul = document.getElementById("ranking");
+ ul.innerHTML = "";
+
+ ranking.sort((a,b)=>b.valor-a.valor);
+
+ ranking.forEach((p,i)=>{
+
+  let medalha = i==0?"🥇":i==1?"🥈":i==2?"🥉":"";
+
+  ul.innerHTML += `<li>${medalha} ${p.nome} - R$ ${p.valor}</li>`;
+ });
+}
+
+// =====================
+function abrirAdmin(){
+
+ let senha = prompt("Senha admin:");
+
+ if(senha===senhaAdmin){
+
+  total = Number(prompt("Valor total arrecadado:"));
+  participantes = Number(prompt("Total de participantes:"));
+
+  let dados = prompt(
+   "Ranking: Nome,Valor | Nome,Valor\nEx: João,20|Maria,10"
+  );
+
+  ranking = [];
+
+  dados.split("|").forEach(item=>{
+   let p = item.split(",");
+   ranking.push({nome:p[0], valor:Number(p[1])});
+  });
+
+  atualizarTela();
+  tocarSom();
+
+ }else{
+  alert("Senha incorreta");
+ }
+}
+
+// =====================
 function tocarSom(){
-  document.getElementById("coinSound").play();
+ document.getElementById("coinSound").play();
 }
 
-// =========================
-// PARTÍCULAS
-// =========================
-const canvas = document.getElementById("particles");
-const ctx = canvas.getContext("2d");
-
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
-
-let particles = [];
-
-function criarParticula(){
-  particles.push({
-    x: Math.random()*canvas.width,
-    y: 0,
-    size: Math.random()*6+2,
-    speed: Math.random()*3+1
-  });
+// =====================
+function confete(){
+ alert("🎉 META ATINGIDA! HORA DO SORTEIO!");
 }
-
-function animar(){
-  ctx.clearRect(0,0,canvas.width,canvas.height);
-
-  particles.forEach((p,i)=>{
-    p.y += p.speed;
-    ctx.fillStyle = "#00ff9d";
-    ctx.fillRect(p.x,p.y,p.size,p.size);
-
-    if(p.y > canvas.height) particles.splice(i,1);
-  });
-
-  requestAnimationFrame(animar);
-}
-
-setInterval(criarParticula, 200);
-animar();
 
 atualizarTela();
-let visitas = localStorage.getItem("visitas") || 0;
-visitas++;
-localStorage.setItem("visitas", visitas);
-document.getElementById("visitas").innerText = visitas;
