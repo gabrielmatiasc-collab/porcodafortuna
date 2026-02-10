@@ -1,92 +1,114 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
   font-family: Arial, Helvetica, sans-serif;
 }
 
-body {
-  min-height: 100vh;
+body{
+  min-height:100vh;
   background: radial-gradient(circle at top, #0f2027, #000000);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  color:white;
 }
 
-/* CARD PRINCIPAL */
-.container {
-  background: rgba(20,20,20,0.95);
-  padding: 40px 30px;
-  border-radius: 25px;
-  width: 90%;
-  max-width: 420px;
-  text-align: center;
-  box-shadow: 0 0 40px rgba(0,255,150,0.3);
+/* CONTAINER PRINCIPAL */
+.container{
+  width:95%;
+  max-width:700px;
+  background:#111;
+  padding:50px 40px;
+  border-radius:25px;
+  box-shadow:0 0 60px rgba(0,255,150,0.4);
+  text-align:center;
 }
 
 /* LOGO */
-.logo {
-  font-size: 38px;
-  font-weight: bold;
-  margin-bottom: 10px;
-  color: #00ff9d;
-  text-shadow: 0 0 15px #00ff9d;
+.logo{
+  font-size:52px;
+  color:#00ff9d;
+  font-weight:bold;
+  text-shadow:0 0 25px #00ff9d;
 }
 
-/* PORQUINHO */
-.pig {
-  font-size: 80px;
-  margin: 20px 0;
-  animation: bounce 2s infinite;
+/* SUBTEXTO */
+.sub{
+  font-size:20px;
+  margin-top:10px;
+  color:#ccc;
 }
 
-@keyframes bounce {
-  0%,100% { transform: translateY(0); }
-  50% { transform: translateY(-15px); }
-}
-
-/* TEXTO */
-p {
-  margin: 10px 0;
-  font-size: 16px;
-  color: #ccc;
+/* PORCO */
+.pig{
+  font-size:110px;
+  margin:30px 0;
 }
 
 /* VALOR */
-.valor {.valor {
-  font-size: 46px;
-  margin: 25px 0;
-  color: #00ff9d;
-  text-shadow: 
-    0 0 10px #00ff9d,
-    0 0 25px #00ff9d,
-    0 0 50px #00ff9d;
+.valor{
+  font-size:64px;
+  margin:25px 0;
+  color:#00ff9d;
+  text-shadow:
+    0 0 15px #00ff9d,
+    0 0 30px #00ff9d,
+    0 0 60px #00ff9d;
 }
+
+/* META */
+.meta{
+  font-size:22px;
+  margin-bottom:15px;
 }
 
 /* BARRA */
-.barra-container {
-  width: 100%;
-  height: 28px;
-  background: #222;
-  border-radius: 50px;
-  overflow: hidden;
-  box-shadow: inset 0 0 10px black;
+.barra-container{
+  width:100%;
+  height:35px;
+  background:#222;
+  border-radius:50px;
+  overflow:hidden;
 }
 
-.barra {
-  height: 100%;
-  width: 0%;
-  background: linear-gradient(90deg, #00ff9d, #00ccff);
-  border-radius: 50px;
-  transition: width 1s ease;
-  box-shadow: 0 0 15px #00ff9d;
+.barra{
+  height:100%;
+  width:0%;
+  background:linear-gradient(90deg,#00ff9d,#00ccff);
+  border-radius:50px;
+  transition:width 1s;
 }
 
-/* RODAPÉ */
-footer {
-  margin-top: 25px;
-  font-size: 12px;
-  opacity: 0.5;
+/* INFO EXTRA */
+#infoExtra{
+  margin-top:30px;
+  font-size:20px;
+  display:flex;
+  justify-content:space-around;
+}
+
+/* BOTÃO */
+button{
+  margin-top:35px;
+  padding:18px 40px;
+  border:none;
+  border-radius:50px;
+  background:#00ff9d;
+  font-size:22px;
+  cursor:pointer;
+}
+
+/* ADMIN */
+.admin{
+  margin-top:30px;
+  font-size:13px;
+  opacity:0.3;
+  cursor:pointer;
+}
+
+/* RESPONSIVO */
+@media(max-width:600px){
+  .logo{font-size:42px;}
+  .valor{font-size:52px;}
 }
