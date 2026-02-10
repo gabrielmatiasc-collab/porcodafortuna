@@ -25,7 +25,7 @@ function atualizarTela() {
 // =========================
 // ÁREA ADMIN
 // =========================
-function abrirAdmin() {
+function abrirAdmin(alert("Funções: Atualizar valor, participantes e ranking");) {
   const senha = prompt("Senha do administrador:");
 
   if (senha === senhaAdmin) {
