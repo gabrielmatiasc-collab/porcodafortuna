@@ -1,26 +1,11 @@
-let meta = 100;
+let meta = 10000; // meta simulada
 
-let valor = localStorage.getItem("valor") || 0;
-atualizarTela();
+function atualizarValor(){
+  let valor = document.getElementById("novoValor").value;
+  document.getElementById("valorTotal").innerText = "R$ " + valor;
 
-function atualizarTela(){
-document.getElementById("valor").innerText =
-"R$ " + Number(valor).toFixed(2).replace(".",",");
+  let porcentagem = (valor / meta) * 100;
+  if(porcentagem > 100) porcentagem = 100;
 
-let porcentagem = (valor/meta)*100;
-document.getElementById("progresso").style.width =
-porcentagem + "%";
-}
-
-function atualizar(){
-let novo = document.getElementById("novoValor").value;
-if(novo >= 0){
-valor = novo;
-localStorage.setItem("valor", valor);
-atualizarTela();
-}
-}
-
-function participar(){
-window.open("https://wa.me/5514997410508");
+  document.getElementById("progresso").style.width = porcentagem + "%";
 }
