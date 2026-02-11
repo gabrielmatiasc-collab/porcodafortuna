@@ -1,43 +1,48 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
-<title>Porco da Fortuna</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Porco da Fortuna 🍀</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<h1>PORCO DA FORTUNA 🍀🤑</h1>
-<p class="sub">Transforme R$1,00 em uma chance real de ganhar dinheiro.</p>
+<header>
+  <h1>🐷 PORCO DA FORTUNA 🍀</h1>
+  <p>Sorteios, prêmios e muita sorte!</p>
+</header>
 
-<div class="porco">🐷</div>
+<section class="card">
+  <img src="https://i.imgur.com/9XqZ8pP.png" class="porco">
 
-<h2>VALOR ATUAL DO PORQUINHO</h2>
-<div id="valor">R$ 0,00</div>
-<p>Meta: R$ 100,00</p>
+  <h2>Valor Arrecadado</h2>
 
-<div class="barra">
-  <div id="progresso"></div>
-</div>
+  <div class="valor" id="valorTotal">R$ 0</div>
 
-<button onclick="participar()">COMO PARTICIPAR</button>
+  <div class="barra">
+    <div class="progresso" id="progresso"></div>
+  </div>
 
-<hr>
+  <input type="number" id="novoValor" placeholder="Digite o valor total">
+  <button onclick="atualizarValor()">Atualizar Valor</button>
 
-<h3>Como Funciona</h3>
-<p>Cada R$1,00 = 1 número</p>
+  <button class="comprar" onclick="document.getElementById('participar').scrollIntoView({behavior:'smooth'})">
+    COMPRE AQUI 👇🏻
+  </button>
+</section>
 
-<h3>Premiação</h3>
-<p>50% do valor será sorteado</p>
+<section id="participar" class="info">
+  <h2>Como Comprar</h2>
+  <p>📌 Pix: <strong>14997410508</strong></p>
+  <p>💰 Cada R$1 = 1 número</p>
+  <p>📆 Sorteio ao vivo</p>
+  <p>✅ Envie o comprovante após pagamento</p>
+</section>
 
-<h3>Transparência</h3>
-<p>Sorteio ao vivo em site gerador de números</p>
-
-<!-- Painel escondido -->
-<div class="painel">
-<input type="number" id="novoValor" placeholder="Novo valor">
-<button onclick="atualizar()">Atualizar Valor</button>
-</div>
+<footer>
+  <p>Boa sorte a todos 🍀</p>
+</footer>
 
 <script src="script.js"></script>
 </body>
