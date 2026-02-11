@@ -1,104 +1,120 @@
 body{
-background:black;
-color:white;
-font-family:Arial;
+background:#000;
+font-family:Arial, sans-serif;
+color:#fff;
 margin:0;
 text-align:center;
 }
 
-header h1{
-font-size:40px;
-color:white;
+.container{
+max-width:400px;
+margin:auto;
+padding:20px;
 }
 
-header span{
+h1{
+font-size:40px;
+}
+
+h1 span{
 color:#00ff66;
 }
 
+.sub{
+color:#ccc;
+margin-bottom:20px;
+}
+
 .porco{
-width:200px;
+width:230px;
 margin:20px auto;
 display:block;
 }
 
 #valor{
-font-size:38px;
+font-size:40px;
 color:#00ff66;
 margin:10px 0;
 }
 
+.meta{
+color:#aaa;
+}
+
 .barra{
-width:80%;
+width:100%;
 height:20px;
-background:#333;
-border-radius:20px;
-margin:10px auto;
+background:#222;
+border-radius:10px;
 overflow:hidden;
+margin:20px 0;
 }
 
 #progresso{
 height:100%;
 width:0%;
-background:#00ff66;
+background:linear-gradient(90deg,#00ff66,#00cc44);
 }
 
-.comprar{
-background:gold;
-padding:15px;
-width:80%;
-border:none;
-border-radius:30px;
-font-size:18px;
+.pix{
+display:block;
+background:#ffd700;
+color:#000;
+padding:18px;
+border-radius:50px;
+font-size:20px;
 font-weight:bold;
-}
-
-.contador{
+text-decoration:none;
 margin-top:20px;
 }
 
-.tempo span{
+.contador{
+display:flex;
+justify-content:space-around;
+margin-top:20px;
+}
+
+.contador div{
 background:#111;
 padding:10px 15px;
 border-radius:8px;
-font-size:18px;
 }
-
-.info{
-margin:30px;
-}
-
-footer{
-color:#777;
-margin:30px;
-}
-
-/* ADMIN */
 
 #adminBtn{
 position:fixed;
-bottom:15px;
 right:15px;
+bottom:15px;
 background:#00ff66;
-padding:10px;
+color:#000;
+width:45px;
+height:45px;
 border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
 cursor:pointer;
 }
 
-.modal{
-display:none;
+#admin{
 position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:rgba(0,0,0,0.8);
-}
-
-.modalBox{
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
 background:#111;
 padding:20px;
-margin:150px auto;
-width:80%;
-max-width:300px;
 border-radius:10px;
+display:none;
+}
+
+#admin input{
+padding:10px;
+width:200px;
+}
+
+#admin button{
+margin-top:10px;
+padding:10px;
+background:#00ff66;
+border:none;
+cursor:pointer;
 }
