@@ -1,73 +1,53 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Porco da Fortuna</title>
 <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-<!-- BOTÃO ADMIN -->
+<!-- BOTÃO ADMIN ESCONDIDO -->
 <div id="adminBtn">⚙️</div>
 
-<!-- LOGIN ADMIN -->
-<div id="adminLogin" class="modal">
-  <div class="modalBox">
-    <h3>Área Administrador</h3>
-    <input type="password" id="senhaAdmin" placeholder="Senha">
-    <button onclick="logarAdmin()">Entrar</button>
-  </div>
-</div>
+<div class="container">
 
-<!-- PAINEL ADMIN -->
-<div id="adminPainel" class="modal">
-  <div class="modalBox">
-    <h3>Atualizar Valor</h3>
-    <input type="number" id="valorInput" placeholder="Novo valor">
-    <button onclick="salvarValor()">Salvar</button>
-  </div>
-</div>
-
-<header>
 <h1>PORCO DA <span>FORTUNA</span></h1>
-<p>Transforme R$1,00 em uma chance real de ganhar dinheiro.</p>
-</header>
+<p class="sub">Transforme R$1,00 em uma chance real de ganhar dinheiro.</p>
 
-<img class="porco" src="https://i.imgur.com/9XqZ8pP.png">
+<img src="img/porco.png" class="porco">
 
-<section class="card">
 <h2>VALOR ATUAL DO PORQUINHO</h2>
 <div id="valor">R$ 0,00</div>
-<p>Meta: R$ 100,00</p>
+<p class="meta">Meta: R$ 100,00</p>
 
 <div class="barra">
   <div id="progresso"></div>
 </div>
 
-<button class="comprar">COMPRE AQUI 👇🏻</button>
+<a class="pix">
+14997410508 ➜ PIX
+</a>
+
+<h3>Tempo restante para o sorteio</h3>
 
 <div class="contador">
-<h3>Tempo restante para o sorteio</h3>
-<div class="tempo">
-<span id="dias">00</span> :
-<span id="horas">00</span> :
-<span id="minutos">00</span> :
-<span id="segundos">00</span>
+  <div><span id="dias">00</span>D</div>
+  <div><span id="horas">00</span>H</div>
+  <div><span id="minutos">00</span>M</div>
+  <div><span id="segundos">00</span>S</div>
 </div>
+
 </div>
-</section>
 
-<section class="info">
-<p>✔️ Cada R$1 = 1 número</p>
-<p>🏆 50% do valor será sorteado</p>
-<p>🔒 Sorteio ao vivo</p>
-<p>📌 Pix: 14997410508</p>
-</section>
-
-<footer>
-Projeto de caráter promocional e recreativo.
-</footer>
+<!-- PAINEL ADMIN -->
+<div id="admin">
+<h3>Área Administrador</h3>
+<input type="number" id="novoValor" placeholder="Novo valor arrecadado">
+<button onclick="salvarValor()">Salvar</button>
+</div>
 
 <script src="script.js"></script>
 </body>
