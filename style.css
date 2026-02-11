@@ -1,56 +1,87 @@
 body{
-background:black;
-color:white;
-text-align:center;
-font-family:Arial;
-padding:20px;
+  margin:0;
+  font-family: Arial, sans-serif;
+  background:#000;
+  color:#fff;
+  text-align:center;
 }
 
-h1{
-color:#00ff6a;
-font-size:40px;
+header{
+  padding:30px;
 }
 
-.sub{
-color:#ccc;
+header h1{
+  color:#00ff66;
+  font-size:38px;
+}
+
+.card{
+  background:#111;
+  margin:20px;
+  padding:25px;
+  border-radius:15px;
+  box-shadow:0 0 15px #00ff66;
 }
 
 .porco{
-font-size:100px;
+  width:180px;
+  margin-bottom:15px;
 }
 
-#valor{
-font-size:48px;
-color:#00ff6a;
-margin:10px;
+.valor{
+  font-size:32px;
+  color:#00ff66;
+  margin:10px 0;
 }
 
 .barra{
-width:80%;
-height:25px;
-background:#333;
-border-radius:20px;
-margin:20px auto;
-overflow:hidden;
+  background:#333;
+  border-radius:20px;
+  overflow:hidden;
+  height:22px;
+  margin:15px 0;
 }
 
-#progresso{
-height:100%;
-width:0%;
-background:#00ff6a;
-transition:0.5s;
+.progresso{
+  background:#00ff66;
+  height:100%;
+  width:0%;
+  transition:0.5s;
+}
+
+input{
+  padding:10px;
+  width:80%;
+  border-radius:10px;
+  border:none;
+  margin-top:10px;
 }
 
 button{
-background:#00ff6a;
-border:none;
-padding:15px 30px;
-border-radius:30px;
-font-size:18px;
-cursor:pointer;
+  width:80%;
+  padding:12px;
+  margin-top:10px;
+  background:#00ff66;
+  color:#000;
+  font-size:16px;
+  border:none;
+  border-radius:10px;
+  font-weight:bold;
 }
 
-.painel{
-margin-top:40px;
-opacity:0.3;
+.comprar{
+  background:gold;
+  margin-top:20px;
+}
+
+.info{
+  background:#111;
+  margin:20px;
+  padding:25px;
+  border-radius:15px;
+}
+
+footer{
+  padding:20px;
+  color:#777;
 }
