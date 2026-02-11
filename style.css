@@ -1,87 +1,104 @@
 body{
-  margin:0;
-  font-family: Arial, sans-serif;
-  background:#000;
-  color:#fff;
-  text-align:center;
-}
-
-header{
-  padding:30px;
+background:black;
+color:white;
+font-family:Arial;
+margin:0;
+text-align:center;
 }
 
 header h1{
-  color:#00ff66;
-  font-size:38px;
+font-size:40px;
+color:white;
 }
 
-.card{
-  background:#111;
-  margin:20px;
-  padding:25px;
-  border-radius:15px;
-  box-shadow:0 0 15px #00ff66;
+header span{
+color:#00ff66;
 }
 
 .porco{
-  width:180px;
-  margin-bottom:15px;
+width:200px;
+margin:20px auto;
+display:block;
 }
 
-.valor{
-  font-size:32px;
-  color:#00ff66;
-  margin:10px 0;
+#valor{
+font-size:38px;
+color:#00ff66;
+margin:10px 0;
 }
 
 .barra{
-  background:#333;
-  border-radius:20px;
-  overflow:hidden;
-  height:22px;
-  margin:15px 0;
+width:80%;
+height:20px;
+background:#333;
+border-radius:20px;
+margin:10px auto;
+overflow:hidden;
 }
 
-.progresso{
-  background:#00ff66;
-  height:100%;
-  width:0%;
-  transition:0.5s;
-}
-
-input{
-  padding:10px;
-  width:80%;
-  border-radius:10px;
-  border:none;
-  margin-top:10px;
-}
-
-button{
-  width:80%;
-  padding:12px;
-  margin-top:10px;
-  background:#00ff66;
-  color:#000;
-  font-size:16px;
-  border:none;
-  border-radius:10px;
-  font-weight:bold;
+#progresso{
+height:100%;
+width:0%;
+background:#00ff66;
 }
 
 .comprar{
-  background:gold;
-  margin-top:20px;
+background:gold;
+padding:15px;
+width:80%;
+border:none;
+border-radius:30px;
+font-size:18px;
+font-weight:bold;
+}
+
+.contador{
+margin-top:20px;
+}
+
+.tempo span{
+background:#111;
+padding:10px 15px;
+border-radius:8px;
+font-size:18px;
 }
 
 .info{
-  background:#111;
-  margin:20px;
-  padding:25px;
-  border-radius:15px;
+margin:30px;
 }
 
 footer{
-  padding:20px;
-  color:#777;
+color:#777;
+margin:30px;
+}
+
+/* ADMIN */
+
+#adminBtn{
+position:fixed;
+bottom:15px;
+right:15px;
+background:#00ff66;
+padding:10px;
+border-radius:50%;
+cursor:pointer;
+}
+
+.modal{
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.8);
+}
+
+.modalBox{
+background:#111;
+padding:20px;
+margin:150px auto;
+width:80%;
+max-width:300px;
+border-radius:10px;
 }
